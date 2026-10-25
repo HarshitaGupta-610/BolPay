@@ -5,7 +5,7 @@ import { Check, Clock3, Copy, LockKeyhole, ShieldCheck, Volume2, X } from 'lucid
 import { useState } from 'react'
 import { demoProfile } from '@/src/lib/passport'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5zj0P2MQQtrlFlUBS8f3SVTf6b12ou.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BolPay-FS60Kgd6xXRNnlYEc4Jy4YX1Pg2EDW.png'
 
 export default function CustomerPage() {
   const [status, setStatus] = useState<'pending' | 'confirmed' | 'disputed'>('pending')

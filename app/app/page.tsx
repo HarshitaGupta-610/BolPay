@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react'
 import { Check, CircleOff, Cloud, CloudOff, CreditCard, Mic, Network, Play, RefreshCw, Send, ShieldCheck, Volume2, Wifi } from 'lucide-react'
 import { parseVoice, type ParsedIntent } from '@/src/lib/parser'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5zj0P2MQQtrlFlUBS8f3SVTf6b12ou.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BolPay-FS60Kgd6xXRNnlYEc4Jy4YX1Pg2EDW.png'
 type Entry = { id: string; customer: string; amount: number; status: 'open' | 'partial' | 'cleared'; days: string }
 const initialEntries: Entry[] = [
   { id: 'entry-001', customer: 'Ramesh Kumar', amount: 1250, status: 'open', days: '30+ days' },
