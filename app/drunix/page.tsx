@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-izk7EDbwsV8iDayiGaxWkl23U1LRAC.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5zj0P2MQQtrlFlUBS8f3SVTf6b12ou.png'
 
 const blocks=[['b-104','a81f…9c2d','10:42:08','Ramesh · Sita','ATTESTED'],['b-103','72bd…11af','10:41:52','Ramesh · BolPay','CLEARED'],['b-102','c091…77e0','10:39:16','Sita · BolPay','ATTESTED'],['b-101','genesis','10:00:00','Drunix network','SEALED']]
 const orgs=['Shopkeeper','Customer','Partner lender','Regulator']

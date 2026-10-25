@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Target, TrendingUp } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-izk7EDbwsV8iDayiGaxWkl23U1LRAC.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5zj0P2MQQtrlFlUBS8f3SVTf6b12ou.png'
 
 const targets = [
   ['Voice entry accuracy', '90%+', 'after customer confirmation'],
