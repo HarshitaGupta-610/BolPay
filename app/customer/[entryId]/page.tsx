@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Check, ShieldCheck, Volume2, X, Clock3, Copy, LockKeyhole } from 'lucide-react'
 import { useState } from 'react'
 import { demoProfile } from '@/src/lib/passport'
-const logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-f25vQJ3vU4l0feDlvMuAH5JkEtSdbN.png'
+const logo='https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-izk7EDbwsV8iDayiGaxWkl23U1LRAC.png'
 export default function CustomerPage(){
  const [done,setDone]=useState(false); const [consent,setConsent]=useState(false); const [expiry,setExpiry]=useState('6 months')
  function confirm(){setDone(true); if(typeof window!=='undefined' && 'speechSynthesis' in window) window.speechSynthesis.speak(new SpeechSynthesisUtterance('Dhanyavaad. Aapki confirmation record ho gayi hai.'))}
