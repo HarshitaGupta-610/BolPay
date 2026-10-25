@@ -20,6 +20,7 @@ export default function AppPage() {
   const [amount, setAmount] = useState('150')
   const [offline, setOffline] = useState(false)
   const [queue, setQueue] = useState(false)
+  const [queuedPayment, setQueuedPayment] = useState(0)
   const [payment, setPayment] = useState(false)
   const [input, setInput] = useState('')
   const [parsed, setParsed] = useState<ParsedIntent | null>(null)
@@ -30,7 +31,7 @@ export default function AppPage() {
   function simulatePayment() {
     const value = Math.max(0, Number(amount) || 0)
     if (!value) return
-    if (offline) { setQueue(true); return }
+    if (offline) { setQueuedPayment(value); setQueue(true); return }
     let remaining = value
     setEntries(current => current.map(entry => {
       if (remaining <= 0 || entry.status === 'cleared' || entry.customer !== customer) return entry
@@ -39,7 +40,22 @@ export default function AppPage() {
     }))
     setPayment(true); window.setTimeout(() => setPayment(false), 2600)
   }
-  function reconnect() { setOffline(false); if (queue) { setQueue(false); setPayment(true); window.setTimeout(() => setPayment(false), 2600) } }
+  function reconnect() {
+    setOffline(false)
+    if (queue && queuedPayment > 0) {
+      let remaining = queuedPayment
+      setEntries(current => current.map(entry => {
+        if (remaining <= 0 || entry.status === 'cleared' || entry.customer !== customer) return entry
+        const paid = Math.min(entry.amount, remaining)
+        remaining -= paid
+        return { ...entry, amount: entry.amount - paid, status: paid === entry.amount ? 'cleared' : 'partial' }
+      }))
+      setQueuedPayment(0)
+      setQueue(false)
+      setPayment(true)
+      window.setTimeout(() => setPayment(false), 2600)
+    }
+  }
   const captions = ['Go offline — entries are safe on this device.', 'Speak an entry in Hindi or English.', 'Customer confirms on the second screen.', 'Simulate UPI — oldest open dues clear first.', 'Passport tier upgrades after repayment.', 'Lender verifies only with consent.', 'Drunix catches the tampering attempt.']
 
   return <main className="min-h-screen bg-[#fffaf6] text-[#2b1b0e]">
