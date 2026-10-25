@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #2b1b0e;
+  --orange: #f97316;
+  --saffron: #ff8a1f;
+  --deep-orange: #e85d04;
+  --cream: #fff6ec;
+  --peach: #ffe8d1;
+  --line: #f7c89d;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Times New Roman", Times, serif; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #ffcf9d; }
+
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+@keyframes pulseWave { 0%,100% { transform: scaleY(.35); opacity: .55 } 50% { transform: scaleY(1); opacity: 1 } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-wave { animation: pulseWave 1s ease-in-out infinite; transform-origin: bottom; }
+.fade-up { animation: fadeUp .65s ease both; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
